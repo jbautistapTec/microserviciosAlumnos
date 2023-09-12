@@ -1,4 +1,4 @@
-package com.training.microservicios.app.controllers;
+package com.training.microservicios.app.usuarios.controllers;
 
 import java.util.Optional;
 
@@ -55,7 +55,7 @@ public class AlumnoController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.save(alumnodb));		
 	}
 	
-	@DeleteMapping("/id")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<?> eliminar(@PathVariable Long id){
 		service.deleteById(id);
 		return ResponseEntity.noContent().build();
